@@ -1,5 +1,15 @@
 package chat.controller;
 
-public class ChatController {
+import chat.view.PopupDisplay;
 
+public class ChatController 
+{
+
+	PopupDisplay display;
+	
+	public void start()
+	{
+		display = new PopupDisplay();
+		display.displayText("I'm Invisible!");
+	}
 }

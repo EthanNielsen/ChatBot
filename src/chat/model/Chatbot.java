@@ -1,5 +1,6 @@
 package chat.model;
 
-public class Chatbot {
-
+public class Chatbot 
+{
+	
 }
