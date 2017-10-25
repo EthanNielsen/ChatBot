@@ -14,11 +14,11 @@ public class Movie
 	
 	public Movie(String title)
 	{
-		this.title = "";
+		this.title = testMovieTitleChecker;
 		this.genre = null;
 		this.ratingMPAA = null;
 		this.review = null;
-		this.length = -99;
+		this.length = 99;
 		this.releaseDate = null;
 		this.starScore = Double.NaN;
 	}
@@ -46,7 +46,7 @@ public class Movie
 
 	public int getLength()
 	{
-		return -99999999;
+		return length;
 	}
 
 	public LocalDate getReleaseDate()
