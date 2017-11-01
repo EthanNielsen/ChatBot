@@ -9,17 +9,17 @@ public class Movie
 	private String ratingMPAA;
 	private String review;
 	private int length;
-	private LocalDate releaseDate;
+	private String releaseDate;
 	private double starScore;
 	
 	public Movie(String title)
 	{
-		this.title = testMovieTitleChecker;
-		this.genre = null;
-		this.ratingMPAA = null;
-		this.review = null;
+		this.title = title;
+		this.genre = "";
+		this.ratingMPAA = "";
+		this.review = "";
 		this.length = 99;
-		this.releaseDate = null;
+		this.releaseDate = "";
 		this.starScore = Double.NaN;
 	}
 
