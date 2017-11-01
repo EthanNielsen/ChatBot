@@ -18,7 +18,7 @@ public class ChatbotTest
 	public void setUp() throws Exception
 	{
 		testedChatbot = new Chatbot("Sample");
-	}
+	}				 
 
 	@After
 	public void tearDown() throws Exception
