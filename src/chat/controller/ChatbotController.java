@@ -2,7 +2,7 @@ package chat.controller;
 
 import chat.view.PopupDisplay;
 
-public class ChatController 
+public class ChatbotController 
 {
 
 	PopupDisplay display;
