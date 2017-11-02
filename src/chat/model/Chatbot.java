@@ -34,8 +34,8 @@ public class Chatbot
 		this.followUps = new String [5];
 		
 		buildVerbs();
-		buildTopics();
-		buildFollowups();
+//		buildTopics();
+//		buildFollowups();
 		buildQuestions();
 		buildShoppingList();
 	}
@@ -69,6 +69,7 @@ public class Chatbot
 		cuteAnimalMemes.add("pupper");
 		cuteAnimalMemes.add("otter");
 		cuteAnimalMemes.add("kittie");
+		cuteAnimalMemes.add("floofer");
 	}
 	
 	private void buildQuestions()
@@ -133,7 +134,9 @@ public class Chatbot
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
-		return false;
+	
+		
+		return true;
 	}
 	
 	public boolean shoppingListChecker(String shoppingItem)
@@ -153,6 +156,10 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
+		if (exitString.equalsIgnoreCase("quit"))
+		{
+			return true;
+		}
 		return false;
 	}
 
