@@ -15,7 +15,7 @@ public class Movie
 	public Movie(String title) // You need to match the "public class Movie" types with what they should be in the controller.
 	{
 		this.title = title;
-		this.genre = "";
+		this.genre = "Thriller";
 		this.ratingMPAA = "";
 		this.review = "";
 		this.length = 99;
@@ -30,7 +30,6 @@ public class Movie
 
 	public String getGenre()
 	{
-		this.genre = "";
 		return genre;
 	}
 
