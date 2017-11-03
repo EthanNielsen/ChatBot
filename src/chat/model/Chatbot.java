@@ -20,24 +20,25 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		this.movieList = null;
+		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.currentTime = null;
-		this.questions = null;
+		this.questions = new String[4];
 		this.username = username;
-		this.content = null;
-		this.intro = null;
-		this.currentTime = null;
-		this.topics = new String[7];
+		this.content = "";
+		this.intro = "";
+		this.currentTime = LocalTime.now();
+		this.topics = new String[4];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
 		
 		buildVerbs();
-//		buildTopics();
-//		buildFollowups();
+		buildTopics();
+		buildFollowups();
 		buildQuestions();
 		buildShoppingList();
+		buildMovieList();
+		buildCuteAnimals();
 	}
 
 	private void buildVerbs()
@@ -48,10 +49,18 @@ public class Chatbot
 		verbs[3] = "am thinking about";
 	}
 	
+	private void buildTopics();
+	{
+		
+	}
+	
 	
 	private void buildMovieList()
 	{
-		
+		movieList.add(new Movie("Spiderman"));
+		movieList.add(new Movie("Lord Of The Rings"));
+		movieList.add(new Movie("Pluto Nash in 3D"));
+		movieList.add(new Movie("The Emoji Movie"));
 	}
 	
 	private void buildShoppingList()
@@ -74,8 +83,11 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
-	}
+		questions[0] = "How dank r u?";
+		questions[1] = "Do u Like my car?";
+		questions[2] = "What is the meaning of life?";
+		questions[3] = "What is your real name?";
+ 	}
 	
 	public String processConversation(String input)
 	{

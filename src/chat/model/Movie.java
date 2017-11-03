@@ -9,7 +9,7 @@ public class Movie
 	private String ratingMPAA;
 	private String review;
 	private int length;
-	private String releaseDate;
+	private LocalDate releaseDate;
 	private double starScore;
 	
 	public Movie(String title)
@@ -19,7 +19,7 @@ public class Movie
 		this.ratingMPAA = "";
 		this.review = "";
 		this.length = 99;
-		this.releaseDate = "";
+		this.releaseDate = LocalDate.now();
 		this.starScore = Double.NaN;
 	}
 
