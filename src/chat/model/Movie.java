@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Movie
 {
-	private String title;
+	private String title; // private "Type" "Object"
 	private String genre;
 	private String ratingMPAA;
 	private String review;
@@ -12,7 +12,7 @@ public class Movie
 	private LocalDate releaseDate;
 	private double starScore;
 	
-	public Movie(String title)
+	public Movie(String title) // You need to match the "public class Movie" types with what they should be in the controller.
 	{
 		this.title = title;
 		this.genre = "";
@@ -20,7 +20,7 @@ public class Movie
 		this.review = "";
 		this.length = 99;
 		this.releaseDate = LocalDate.now();
-		this.starScore = Double.NaN;
+		this.starScore = 3.1415;
 	}
 
 	public String getTitle()
@@ -30,7 +30,7 @@ public class Movie
 
 	public String getGenre()
 	{
-		this.genre = "@@@@@@@";
+		this.genre = "";
 		return genre;
 	}
 
