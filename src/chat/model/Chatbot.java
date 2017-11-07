@@ -163,20 +163,20 @@ public class Chatbot
 		return true;
 	}
 	
-	public boolean shoppingListChecker(String shoppingItem)
-	{
-		for (int index = 0; index < 4; index++)
-		{
-			if(shoppingList.contains("slug bait"))
-			{
-				return false;
-			}
-			else 
-			{
-				
-			}
-		}
-	}
+//	public boolean shoppingListChecker(String shoppingItem)
+//	{
+////		for (int index = 0; index < 4; index++)
+////		{
+////			if(shoppingList.contains("slug bait"))
+////			{
+////				return false;
+////			}
+////			else 
+////			{
+////				
+////			}
+////		}
+//	}
 	
 	public boolean movieTitleChecker(String title)
 	{
