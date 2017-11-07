@@ -18,7 +18,7 @@ public class Chatbot
 	private String intro;
 	private LocalTime currentTime;
 	
-	public Chatbot(String username)
+	public Chatbot(String username) // This is the constructor I defined my data values in here
 	{
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
@@ -30,7 +30,7 @@ public class Chatbot
 		this.currentTime = LocalTime.now();
 		this.topics = new String[4];
 		this.verbs = new String [4];
-		this.followUps = new String [5];
+		this.followUps = new String [3];
 		
 		buildVerbs();
 		buildTopics();
@@ -39,9 +39,9 @@ public class Chatbot
 		buildShoppingList();
 		buildMovieList();
 		buildCuteAnimals();
-	}
-
-	private void buildVerbs()
+	} // This is the end of the constructor. 
+	
+	private void buildVerbs() // used by "new String[4];"
 	{
 		verbs[0] = "like";
 		verbs[1] = "dislike";
@@ -49,13 +49,25 @@ public class Chatbot
 		verbs[3] = "am thinking about";
 	}
 	
-	private void buildTopics();
+	private void buildTopics() // used by "new String[4];"
 	{
+		topics[0] = "Race Cars";
+		topics[1] = "Space Bars";
+		topics[2] = "Politics";
+		topics[3] = "Music";
+				
+	}
+	
+	private void buildFollowups() // used by "new String[3];"
+	{
+		followUps[0] = "What are you like?";
+		followUps[1] = "Whats your favorite color?";
+		followUps[2] = "How was your day?";
 		
 	}
 	
 	
-	private void buildMovieList()
+	private void buildMovieList() // used by "new ArrayList<Movie>();"
 	{
 		movieList.add(new Movie("Spiderman"));
 		movieList.add(new Movie("Lord Of The Rings"));
