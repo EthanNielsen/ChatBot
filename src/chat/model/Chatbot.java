@@ -80,7 +80,6 @@ public class Chatbot
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
 		shoppingList.add("protein");
-		shoppingList.add("slug bait");
 		shoppingList.add("gross things");
 	}
 	
@@ -101,6 +100,17 @@ public class Chatbot
 		questions[3] = "What is your real name?";
  	}
 	
+	/**
+	 * At least a full sentence about what and how a method operates.
+	 * @param input Explanation of the parameter
+	 * @return  full sentence that details what is returned.
+	 */
+	/////////////////////////////////////////////////////////////////
+	/**
+	 * The processConversation processes the response and returns it in a response.
+	 * @param input Collects data in a String type.
+	 * @return The chatbotResponse is what is returned (Basically what was typed is returned with a "You Said..")
+	 */
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
@@ -111,6 +121,11 @@ public class Chatbot
 		return chatbotResponse;
 	}
 	
+	/**
+	 * This method chooses what response is going to be given.
+	 * Uses integers to choose certain topics. (random numbers and arrays).
+	 * @return It builds a response with the random number generators and returns a random question.
+	 */ 
 	private String buildChatbotResponse()
 	{
 		String response = "I ";
@@ -136,8 +151,11 @@ public class Chatbot
 		return response;
 	}
 	
-	
-	
+	/**
+	 * Makes sure that the input isn't null and that it is greater than 2 values.
+	 * @param input This input is checked to see if it matches the requirements.
+	 * @return If the input passes the test than return their response.
+	 */
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
@@ -171,21 +189,22 @@ public class Chatbot
 		
 		return true;
 	}
-	
-//	public boolean shoppingListChecker(String shoppingItem)
-//	{
-////		for (int index = 0; index < 4; index++)
-////		{
-////			if(shoppingList.contains("slug bait"))
-////			{
-////				return false;
-////			}
-////			else 
-////			{
-////				
-////			}
-////		}
-//	}
+	/**
+	 * This checks the shopping List and sees if it has all the specific items.
+	 * @param shoppingItem Links to the Shopping List items.
+	 * @return Returns true if if shopping list items are there but if not then return false.
+	 */
+	public boolean shoppingListChecker(String shoppingItem)
+	{
+		for (int index = 0; index < shoppingList.size(); index++)
+		{			
+			if(shoppingList.contains(shoppingItem))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	public boolean movieTitleChecker(String title)
 	{
@@ -197,6 +216,11 @@ public class Chatbot
 		return false;
 	}
 
+	/**
+	 * Allows you to exit the app
+	 * @param exitString 
+	 * @return
+	 */
 	public boolean quitChecker(String exitString)
 	{
 		if (exitString.equalsIgnoreCase("quit"))
