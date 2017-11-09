@@ -94,18 +94,18 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		questions[0] = "How dank r u?";
+		questions[0] = "What are your thoughts on presipitation?";
 		questions[1] = "Do u Like my car?";
 		questions[2] = "What is the meaning of life?";
 		questions[3] = "What is your real name?";
  	}
 	
-	/**
-	 * At least a full sentence about what and how a method operates.
-	 * @param input Explanation of the parameter
-	 * @return  full sentence that details what is returned.
-	 */
-	/////////////////////////////////////////////////////////////////
+//	/**
+//	 * At least a full sentence about what and how a method operates.
+//	 * @param input Explanation of the parameter
+//	 * @return  full sentence that details what is returned.
+//	 */
+
 	/**
 	 * The processConversation processes the response and returns it in a response.
 	 * @param input Collects data in a String type.
