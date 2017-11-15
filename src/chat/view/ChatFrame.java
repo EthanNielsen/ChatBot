@@ -8,7 +8,6 @@ public class ChatFrame extends JFrame
 	private ChatbotController appController;
 	private ChatPanel appPanel;
 	
-	
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
@@ -22,6 +21,8 @@ public class ChatFrame extends JFrame
 	{
 		return appController;
 	}
+	
+	
 	
 	private void setupFrame()
 	{
