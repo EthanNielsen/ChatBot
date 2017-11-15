@@ -12,7 +12,7 @@ public class ChatPanel extends JPanel
 {
 
 	private ChatbotController appController;
-	private JButton cButton;
+	private JButton chatButton;
 	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
