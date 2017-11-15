@@ -46,6 +46,16 @@ public class ChatbotController
 	}
 	
 	
+	public PopupDisplay getDisplay()
+	{
+		return display;
+	}
+	
+	public ChatFrame getChatFrame()
+	{
+		return appFrame;
+	}
+	
 	
 	
 }
