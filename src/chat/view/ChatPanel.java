@@ -22,12 +22,11 @@ public class ChatPanel extends JPanel
 		super();
 		this.appController = appController;
 		
-		//Initialize GUI datta mebers
+		//Initialize GUI data members
 		chatButton = new JButton("speak");
 		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
 		appLayout = new SpringLayout();
-				
 		
 		
 		setupPanel();
@@ -37,7 +36,11 @@ public class ChatPanel extends JPanel
 	
 	private void setupPanel()
 	{
-
+		this.setBackground(Color.ORANGE);
+		this.setLayout(appLayout);
+		this.add(chatButton);
+		this.add(inputField);
+		this.add(chatArea);
 	}
 	
 	private void setupLayout()
