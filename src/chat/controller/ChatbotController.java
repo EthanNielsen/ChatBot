@@ -29,7 +29,7 @@ public class ChatbotController
 //		}
 	}
 	
-	public String interactWithChatot(String input)
+	public String interactWithChatbot(String input)
 	{
 		String message = ("Hello");
 		
@@ -43,6 +43,12 @@ public class ChatbotController
 		chatbotSays += chatbot.processConversation(chat);
 		
 		return chatbotSays;
+	}
+	
+	
+	public Chatbot getChatbot()
+	{
+		return chatbot;
 	}
 	
 	
