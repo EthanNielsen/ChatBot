@@ -21,6 +21,7 @@ public class ChatbotController
 		appFrame = new ChatFrame(this);
 	}
 	
+	
 	/**
 	 * This asks the user what it wants to talk about and checks the answer if it was valid input.
 	 */
@@ -35,6 +36,7 @@ public class ChatbotController
 //		}
 	}
 	
+	
 	/**
 	 * Calls interactWithChatbot
 	 * @param input grabs the users input.
@@ -42,17 +44,18 @@ public class ChatbotController
 	 */
 	public String interactWithChatbot(String input)
 	{
-		String message = ("Hello ");
+		String chatbotSays = ("Hello ");
 		
 		if(chatbot.quitChecker(input))
 		{
 			close();
 		}
 		
-		message += chatbot.processConversation(input);
+		chatbotSays += chatbot.processConversation(input);
 		
-		return message;
+		return chatbotSays;
 	}
+	
 	
 	private void close()
 	{
@@ -70,6 +73,7 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
+	
 	/**
 	 * Calls the getChatbot method and returns "chatbot".
 	 */
@@ -77,6 +81,7 @@ public class ChatbotController
 	{
 		return chatbot;
 	}
+	
 	
 	/**
 	 * Calls the getDisplay method
@@ -87,6 +92,7 @@ public class ChatbotController
 		return display;
 	}
 	
+	
 	/**
 	 * This method calls getChatFrame
 	 * @return It returns the "appFrame".
@@ -94,6 +100,11 @@ public class ChatbotController
 	public ChatFrame getChatFrame()
 	{
 		return appFrame;
+	}
+	
+	public String prossesCheckers()
+	{
+		
 	}
 	
 	
