@@ -17,6 +17,10 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
 	
+	/**
+	 * Here is the constructor for ChatPanel, I have defined GUI data members in here.
+	 * @param appController Links the appController into the Panel
+	 */
 	public ChatPanel(ChatbotController appController)
 	{
 		super();
@@ -35,6 +39,9 @@ public class ChatPanel extends JPanel
 		setupListeners();
 	}
 	
+	/**
+	 * This sets up the Panel into the number of componets I want. I also changed the color.
+	 */
 	private void setupPanel()
 	{
 		this.setBackground(Color.ORANGE);
@@ -47,6 +54,9 @@ public class ChatPanel extends JPanel
 		
 	}
 	
+	/**
+	 * This is a dumping ground for GUI, "appLayout.putConstraint(....);"
+	 */
 	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.NORTH, chatArea, 20, SpringLayout.NORTH, this);

@@ -10,6 +10,9 @@ public class ChatbotController
 	private PopupDisplay display;
 	private ChatFrame appFrame;
 	
+	/**
+	 * Here is the constructor for ChatbotController
+	 */
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Ethan Nielsen");
@@ -18,6 +21,9 @@ public class ChatbotController
 		appFrame = new ChatFrame(this);
 	}
 	
+	/**
+	 * This asks the user what it wants to talk about and checks the answer if it was valid input.
+	 */
 	public void start()
 	{
 		String response = display.collectResponse("What do you want to talk about?");
@@ -29,6 +35,11 @@ public class ChatbotController
 //		}
 	}
 	
+	/**
+	 * Calls interactWithChatbot
+	 * @param input grabs the users input.
+	 * @return Returns the message they wrote in input.
+	 */
 	public String interactWithChatbot(String input)
 	{
 		String message = ("Hello");
@@ -45,18 +56,27 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
-	
+	/**
+	 * Calls the getChatbot method and returns "chatbot".
+	 */
 	public Chatbot getChatbot()
 	{
 		return chatbot;
 	}
 	
-	
+	/**
+	 * Calls the getDisplay method
+	 * @return I returns the "display"
+	 */
 	public PopupDisplay getDisplay()
 	{
 		return display;
 	}
 	
+	/**
+	 * This method calls getChatFrame
+	 * @return It returns the "appFrame".
+	 */
 	public ChatFrame getChatFrame()
 	{
 		return appFrame;

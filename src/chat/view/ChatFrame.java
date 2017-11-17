@@ -8,6 +8,10 @@ public class ChatFrame extends JFrame
 	private ChatbotController appController;
 	private ChatPanel appPanel;
 	
+	/**
+	 * This is the constructor, it holds all my defined variables. The controller has defined the appController and appPanel.
+	 * @param appController Links the Panel, Frame, and Controller.
+	 */
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
@@ -17,13 +21,18 @@ public class ChatFrame extends JFrame
 		setupFrame();
 	}
 	
+	/**
+	 * This method calls the getBaseController.
+	 * @return when "getBaseController" return the "appController".
+	 */
 	public ChatbotController getBaseController()
 	{
 		return appController;
 	}
 	
-	
-	
+	/**
+	 * The setupFrame creates the frame needed to put GUI code into.
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel);
