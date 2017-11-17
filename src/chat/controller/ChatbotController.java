@@ -42,12 +42,24 @@ public class ChatbotController
 	 */
 	public String interactWithChatbot(String input)
 	{
-		String message = ("Hello");
+		String message = ("Hello ");
 		
-		chatbot.processConversation(input);
+		if(chatbot.quitChecker(input))
+		{
+			close();
+		}
+		
+		message += chatbot.processConversation(input);
 		
 		return message;
 	}
+	
+	private void close()
+	{
+		display.displayText("Cya");
+		System.exit(0);
+	}
+	
 	
 	private String popupChat(String chat)
 	{
