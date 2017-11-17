@@ -7,6 +7,9 @@ import javax.swing.JTextArea;
 import javax.swing.SpringLayout;
 import chat.controller.ChatbotController;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class ChatPanel extends JPanel
 {
@@ -40,7 +43,7 @@ public class ChatPanel extends JPanel
 	}
 	
 	/**
-	 * This sets up the Panel into the number of componets I want. I also changed the color.
+	 * This sets up the Panel into the number of components I want. I also changed the color.
 	 */
 	private void setupPanel()
 	{
@@ -68,8 +71,21 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatArea);
 	}
 
+	/**
+	 * 
+	 */
 	private void setupListeners()
 	{
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+					String userText = inputField.getText();
+					String displayText = appController.interactWithChatbot(userText);
+					chatArea.append(displayText);
+					inputField.setText("");
+			}
+		});
 		
 	}
 }
