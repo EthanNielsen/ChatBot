@@ -26,7 +26,7 @@ public class ChatbotController
 	 */
 	public void start()
 	{
-		String response = display.collectResponse("What do you want to talk about?");
+		display.displayText("Speak...");
 		
 //		while (chatbot.lengthChecker(response) & !chatbot.quitChecker(response))
 //		{
@@ -43,6 +43,8 @@ public class ChatbotController
 	public String interactWithChatbot(String input)
 	{
 		String message = ("Hello");
+		
+		chatbot.processConversation(input);
 		
 		return message;
 	}
