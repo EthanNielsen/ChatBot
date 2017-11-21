@@ -10,7 +10,11 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * 
+ * @author enie1762
+ *
+ */
 public class ChatPanel extends JPanel
 {
 
@@ -89,5 +93,16 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
+		checkerButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userText = inputField.getText();
+				String displayText = appController.useCheckers(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
+				
+			}
+		});
 	}
 }

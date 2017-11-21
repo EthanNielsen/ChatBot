@@ -108,13 +108,11 @@ public class ChatbotController
 		return appFrame;
 	}
 	
-	public String prossesCheckers()
-	{
-		
-	}
-	
-	
-	
+//	public String prossesCheckers()
+//	{
+//		
+//	}
+//	
 }
 
 
