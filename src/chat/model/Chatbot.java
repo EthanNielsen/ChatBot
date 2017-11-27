@@ -177,7 +177,7 @@ public class Chatbot
 	{
 		boolean nameCheck = false;
 		
-		if (input != )
+		for(input)
 		
 		
 		return nameCheck;
