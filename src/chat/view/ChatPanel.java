@@ -9,6 +9,7 @@ import chat.controller.ChatbotController;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JLabel;
 
 /**
  * 
@@ -24,6 +25,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
 	private JButton checkerButton;
+	private JLabel infoLabel;
 	
 	/**
 	 * Here is the constructor for ChatPanel, I have defined GUI data members in here.
@@ -39,6 +41,7 @@ public class ChatPanel extends JPanel
 		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
 		appLayout = new SpringLayout();
+		infoLabel = new JLabel("Speak Here...");
 		checkerButton = new JButton("check");
 		
 		setupPanel();
