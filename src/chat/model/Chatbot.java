@@ -201,6 +201,20 @@ public class Chatbot
 		}
 		
 		return input;
+		
+		int firstBracketPosition = input.indexOf("<");
+		int secondBracketPosition = input.indexOf(">");
+		
+		if(firstBracketPosition != -1 && secondBracketPosition != -1)
+		{
+			tagText = input.substring(0, secondBracketPosition +1);
+			return false;
+		}
+		
+		
+		
+		
+		
 	}
 	
 	public boolean userNameChecker(String input)
