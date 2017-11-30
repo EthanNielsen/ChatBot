@@ -187,29 +187,60 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-		
-		if(input.indexOf())
-		
-		if(input.contains("<") || !input.contains(">"))
+		boolean containsHTML = false;
+		if(input == null && !input.contains("<"))
 		{
-			return false;
+			return containsHTML;
+		}
+		int firstOpen = input.indexOf("<");
+		int firstClose = input.indexOf(">", firstOpen);
+		int secondOpen = -9;
+		int secondClose = -9;
+		String tagText = "";
+		
+		//Check bad tags
+		if(input.contains("<>") && input.indexOf("< >") > -1)
+		{
+			containsHTML = false;
+		}
+		//Check singleton
+		if(input.toUpperCase().contains("<P>") && input.toLowerCase().contains("<br>"))
+		{
+			containsHTML = true;
+		}
+		//Check others
+		else if(firstClose > firstOpen)
+		{
+			//Others
+			tagText = input.substring(firstOpen +1, firstClose).toLowerCase();
+			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
+			
+			
 		}
 		
-		else if(input.contains("<>"))
-		{
-			return false;
-		}
 		
-		return input;
 		
-		int firstBracketPosition = input.indexOf("<");
-		int secondBracketPosition = input.indexOf(">");
-		
-		if(firstBracketPosition != -1 && secondBracketPosition != -1)
-		{
-			tagText = input.substring(0, secondBracketPosition +1);
-			return false;
-		}
+	// This is code I tried to make to solve HTMLTagChecker.
+//		if(!input.contains("<") && !input.contains(">") && !input.contains("</"))
+//		{
+//			return false;
+//		}
+//		
+//		else if(input.contains("<>"))
+//		{
+//			return false;
+//		}
+//		
+//		return input;
+//		
+//		int firstBracketPosition = input.indexOf("<");
+//		int secondBracketPosition = input.indexOf(">");
+//		
+//		if(firstBracketPosition != -1 && secondBracketPosition != -1)
+//		{
+//			tagText = input.substring(0, secondBracketPosition +1);
+//			return false;
+//		}
 		
 		
 		
