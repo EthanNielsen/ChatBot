@@ -63,7 +63,8 @@ public class Chatbot
 		followUps[0] = "What are you like?";
 		followUps[1] = "Whats your favorite color?";
 		followUps[2] = "How was your day?";
-		
+		followUps[3] = "Whats your social security number?";
+		followUps[4] = "Is this the real world?";
 	}
 	
 	
@@ -214,9 +215,9 @@ public class Chatbot
 			//Others
 			tagText = input.substring(firstOpen +1, firstClose).toLowerCase();
 			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
-			
-			
 		}
+		return containsHTML;
+	}
 		
 		
 		
@@ -240,19 +241,14 @@ public class Chatbot
 //		{
 //			tagText = input.substring(0, secondBracketPosition +1);
 //			return false;
-//		}
-		
-		
-		
-		
-		
-	}
+//		}	
+//	}
 	
 	public boolean userNameChecker(String input)
 	{
 		boolean nameCheck = false;
 		
-		for(input)
+//		for(input)
 		
 		
 		return nameCheck;
