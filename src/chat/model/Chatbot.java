@@ -30,7 +30,7 @@ public class Chatbot
 		this.currentTime = LocalTime.now();
 		this.topics = new String[4];
 		this.verbs = new String [4];
-		this.followUps = new String [3];
+		this.followUps = new String [5];
 		
 		buildVerbs();
 		buildTopics();
