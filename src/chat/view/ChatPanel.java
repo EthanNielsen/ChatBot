@@ -19,7 +19,6 @@ import javax.swing.JScrollPane;
  */
 public class ChatPanel extends JPanel
 {
-
 	private ChatbotController appController;
 	private JButton chatButton;
 	private JTextField inputField;

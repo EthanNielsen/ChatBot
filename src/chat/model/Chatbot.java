@@ -58,7 +58,7 @@ public class Chatbot
 				
 	}
 	
-	private void buildFollowups() // used by "new String[3];"
+	private void buildFollowups() // used by "new String[5];"
 	{
 		followUps[0] = "What are you like?";
 		followUps[1] = "Whats your favorite color?";
@@ -115,6 +115,8 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
+		currentTime = LocalTime.now();
+		chatbotResponse += currentTime.getHour() + ":" + currentTime.getMinute() + " ";
 		chatbotResponse += "You said;" + "\n" + input + "\n";
 		
 		chatbotResponse += buildChatbotResponse();
@@ -246,12 +248,20 @@ public class Chatbot
 	
 	public boolean userNameChecker(String input)
 	{
-		boolean nameCheck = false;
+		if (username.contains("@"))
+		{
+			return true;
+		}
+//		else if (username.indexOf(0) == "@")
+//		{
+//			return true;
+//		}
+//		
 		
-//		for(input)
 		
 		
-		return nameCheck;
+		
+		return false;
 	}
 	
 	public boolean contentChecker(String contentCheck)
@@ -274,7 +284,7 @@ public class Chatbot
 	{
 		for (int index = 0; index < shoppingList.size(); index++)
 		{			
-			if(shoppingList.contains(shoppingItem))
+			if(shoppingItem.contains(shoppingList.get(index)))
 			{
 				return true;
 			}
