@@ -62,7 +62,9 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
-	
+	/**
+	 * This is the closeing statement when you exit out.
+	 */
 	private void close()
 	{
 		display.displayText("Cya");

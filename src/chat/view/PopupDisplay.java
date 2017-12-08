@@ -9,7 +9,7 @@ public class PopupDisplay
 	private String windowTitle;
 	
 	/**
-	 * Creates a Image when the app popups.
+	 * Creates a Image when the app pop-ups.
 	 */
 	public PopupDisplay()
 	{
@@ -18,8 +18,8 @@ public class PopupDisplay
 	}
 	
 	/**
-	 * 
-	 * @param message 
+	 * I believe this returns an error message if there is a null.
+	 * @param message is the message in case of a null.
 	 */
 	public void displayText(String message)
 	{
