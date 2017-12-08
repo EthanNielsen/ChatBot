@@ -69,7 +69,11 @@ public class ChatbotController
 		System.exit(0);
 	}
 	
-	
+	/**
+	 * Returns the input of the user.
+	 * @param chat 
+	 * @return Returns the string from chatbotSays.
+	 */
 	private String popupChat(String chat)
 	{
 		String chatbotSays = "";
@@ -79,6 +83,11 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
+	/**
+	 * Checks to see if a special word "text" was imputed.
+	 * @param text Defines what is inside the lists / arrays.
+	 * @return Returns the special response.
+	 */
 	public String useCheckers(String text)
 	{
 		String response = "";

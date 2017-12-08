@@ -41,6 +41,9 @@ public class Chatbot
 		buildCuteAnimals();
 	} // This is the end of the constructor. 
 	
+	/**
+	 * Builds verbs that chatbot could say.
+	 */
 	private void buildVerbs() // used by "new String[4];"
 	{
 		verbs[0] = "like";
@@ -49,15 +52,20 @@ public class Chatbot
 		verbs[3] = "am thinking about";
 	}
 	
+	/**
+	 * Builds topics that chatbot could say.
+	 */
 	private void buildTopics() // used by "new String[4];"
 	{
 		topics[0] = "Race Cars";
 		topics[1] = "Space Bars";
 		topics[2] = "Politics";
-		topics[3] = "Music";
-				
+		topics[3] = "Music";		
 	}
 	
+	/**
+	 * Builds the followup questions that could be asked by chatbot.
+	 */
 	private void buildFollowups() // used by "new String[5];"
 	{
 		followUps[0] = "What are you like?";
@@ -67,7 +75,9 @@ public class Chatbot
 		followUps[4] = "Is this the real world?";
 	}
 	
-	
+	/**
+	 * Builds Movies that chatbot could say.
+	 */
 	private void buildMovieList() // used by "new ArrayList<Movie>();"
 	{
 		movieList.add(new Movie("Spiderman"));
@@ -76,6 +86,9 @@ public class Chatbot
 		movieList.add(new Movie("The Emoji Movie"));
 	}
 	
+	/**
+	 * Builds the shopping list.
+	 */
 	private void buildShoppingList()
 	{
 		shoppingList.add("snacks");
@@ -84,6 +97,9 @@ public class Chatbot
 		shoppingList.add("gross things");
 	}
 	
+	/**
+	 * Builds the Cute Animals. 
+	 */
 	private void buildCuteAnimals()
 	{
 		cuteAnimalMemes.add("pepe");
@@ -93,6 +109,9 @@ public class Chatbot
 		cuteAnimalMemes.add("floofer");
 	}
 	
+	/**
+	 * Builds questions that can also be asked by chatbot.
+	 */
 	private void buildQuestions()
 	{
 		questions[0] = "What are your thoughts on presipitation?";
@@ -188,6 +207,11 @@ public class Chatbot
 		return validLength;
 	}
 	
+	/**
+	 * Checks to see if the HTML format is correct.
+	 * @param input Is the users response
+	 * @return returns "containsHTML" meaning that the HTML was correct.
+	 */
 	public boolean htmlTagChecker(String input)
 	{
 		boolean containsHTML = false;
@@ -246,8 +270,16 @@ public class Chatbot
 //		}	
 //	}
 	
+	/**
+	 * Checks to see if the user name has correct parameters.
+	 * @param input User input
+	 * @return return nameCheck if it passes the tests. 
+	 */
+	// WORK ON THIS.....
 	public boolean userNameChecker(String input)
 	{
+		boolean nameCheck = false;
+		
 		if (username.contains("@"))
 		{
 			return true;
@@ -256,12 +288,8 @@ public class Chatbot
 //		{
 //			return true;
 //		}
-//		
 		
-		
-		
-		
-		return false;
+		return nameCheck;
 	}
 	
 	public boolean contentChecker(String contentCheck)

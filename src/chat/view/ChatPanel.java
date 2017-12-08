@@ -67,6 +67,9 @@ public class ChatPanel extends JPanel
 		chatArea.setWrapStyleWord(true);
 	}
 	
+	/**
+	 * The startup for my buttons, Layouts, backgrounds, etc... are created here.
+	 */
 	private void setupPanel()
 	{
 		this.setBackground(Color.ORANGE);
@@ -96,7 +99,7 @@ public class ChatPanel extends JPanel
 	}
 
 	/**
-	 * 
+	 * When you click the "speak" button it returns the input and calls the methods to create an answer.
 	 */
 	private void setupListeners()
 	{
