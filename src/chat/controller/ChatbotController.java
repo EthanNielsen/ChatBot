@@ -25,6 +25,8 @@ public class ChatbotController
 		//View initialized after Model
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
+		
+//		display = new Array<String>();
 	}
 	
 	
@@ -136,6 +138,10 @@ public class ChatbotController
 		return appFrame;
 	}
 	
+	public void  handleErrors(Exception error)
+	{
+		display.displayText(error.getMessage());
+	}
 }
 
 
