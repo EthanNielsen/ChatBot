@@ -3,6 +3,7 @@ package chat.controller;
 import chat.view.PopupDisplay;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
+import chat.model.CTECTwitter;
 
 
 /**
@@ -15,6 +16,7 @@ public class ChatbotController
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	private ChatFrame appFrame;
+	private CTECTwitter myTwitter;
 	
 	/**
 	 * Here is the constructor for ChatbotController
@@ -22,6 +24,7 @@ public class ChatbotController
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Ethan Nielsen");
+		myTwitter = new CTECTwitter(this);
 		//View initialized after Model
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
