@@ -1,5 +1,6 @@
 package chat.view;
 
+import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -21,6 +22,10 @@ public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
 	private JButton chatButton;
+	private JButton loadButton;
+	private JButton saveButton;
+	private JButton tweetButton;
+	private JButton searchButton;
 	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
@@ -39,7 +44,11 @@ public class ChatPanel extends JPanel
 		this.appController = appController;
 		
 		//Initialize GUI data members
-		chatButton = new JButton("speak");
+		chatButton = new JButton("speak", new ImageIcon(getClass().getResource("/chat/view/images/Aimsley.png")));
+		loadButton = new JButton("load", new ImageIcon(getClass().getResource("/chat/view/images/Beardy.png")));
+		saveButton = new JButton("save", new ImageIcon(getClass().getResource("/chat/view/images/Coach.png")));
+		tweetButton = new JButton("tweet", new ImageIcon(getClass().getResource("/chat/view/images/Heavy.png")));
+		searchButton = new JButton("search", new ImageIcon(getClass().getResource("/chat/view/images/Scout.png")));
 		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
 		appLayout = new SpringLayout();
@@ -80,6 +89,12 @@ public class ChatPanel extends JPanel
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
 		this.add(checkerButton);
+		
+		this.add(loadButton);
+		this.add(saveButton);
+		this.add(tweetButton);
+		this.add(searchButton);
+		
 	}
 	
 	/**
