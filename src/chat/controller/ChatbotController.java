@@ -131,7 +131,6 @@ public class ChatbotController
 		return display;
 	}
 	
-	
 	/**
 	 * This method calls getChatFrame
 	 * @return It returns the "appFrame".
@@ -145,6 +144,12 @@ public class ChatbotController
 	{
 		display.displayText(error.getMessage());
 	}
+	
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
+	}
+	
 }
 
 
