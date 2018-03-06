@@ -29,6 +29,8 @@ public class ChatbotController
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
 		
+		
+		
 //		display = new Array<String>();
 	}
 	
