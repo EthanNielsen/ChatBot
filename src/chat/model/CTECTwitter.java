@@ -1,23 +1,15 @@
 package chat.model;
 
-import java.io.File;
 import java.util.List;
+import java.util.Scanner;
 
 import chat.controller.ChatbotController;
+import twitter4j.Paging;
+import twitter4j.ResponseList;
+import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.Twitter;
-import twitter4j.GeoLocation;
-import twitter4j.Paging;
-import twitter4j.Query;
-import twitter4j.QueryResult;
-import twitter4j.ResponseList;
-import twitter4j.Status;
-
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.text.DecimalFormat;
 
 public class CTECTwitter 
 {
@@ -125,7 +117,33 @@ public class CTECTwitter
 
 	private String [] createIgnoredWordArray()
 	{
+		String [] boringWords;
+		String fileText = IOController.loadFromFile(appController, "commonWords.txt");
+		int wordCount = 0;
 		
+		Scanner wordScanner = new Scanner(fileText);
+		
+		while(wordScanner.hasNextLine())
+		{
+			wordScanner.nextLine();
+			wordCount++;
+		}
+		
+		boringWords = new String [wordCount];
+		wordScanner.close();
+		
+		// Alternative file loading method.
+		// Uses the InputStream class
+		// Notice the lack of try/catch
+		
+		wordScanner = new Scanner(this.getClass().getResourceAsStream("data/commonWords.txt"));
+		for(int index = 0; index < boringWords.length; index++)
+		{
+			boringWords[index] = wordScanner.nextLine();
+		}
+		
+		wordScanner.close();
+		return boringWords;
 	}
 	
 	private void trimTheBoringWords(String [] boringWords)
