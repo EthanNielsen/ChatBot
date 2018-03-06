@@ -1,6 +1,7 @@
 package chat.model;
 
 import java.io.File;
+import java.util.List;
 
 import chat.controller.ChatbotController;
 import twitter4j.Twitter;
@@ -36,6 +37,54 @@ public class CTECTwitter
 		catch(Exception otherError)
 		{
 			appController.handleErrors(otherError);
+		}
+	}
+	
+	public String getMostCommonWord(String username)
+	{
+		String mostCommon = "";
+		
+		collectTweets(username);
+		turnStatusesToWords();
+		totalWordCount = tweetedWords.size();
+		String [] boring = createIgnoredWordArray();
+		trimTheBoringWords(boring);
+		
+		return mostCommon;
+	}
+
+	private void collectTweets(String username)
+	{
+		
+	}
+	
+	private void turnStatusesToWords()
+	{
+		
+	}
+	
+	private String removePuncuation(String currentString)
+	{
+		
+	}
+
+	private String [] createIgnoredWordArray()
+	{
+		
+	}
+	
+	private void trimTheBoringWords(String [] boringWords)
+	{
+		for (int index = tweetedWords.size() - 1; index >= 0; index--)
+		{
+			for (int removeIndex = 0; removeIndex < boringWords.length; removeIndex++)
+			{
+				if (tweetedWords.get(index).equals(boringWords[removeIndex]))
+				{
+					tweetedWords.remove(index);
+					removeIndex = boringWords.length;
+				}
+			}
 		}
 	}
 }
