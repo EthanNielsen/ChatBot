@@ -1,17 +1,19 @@
 package chat.view;
 
-import javax.swing.*;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import javax.swing.SpringLayout;
-import chat.controller.ChatbotController;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
+
+import chat.controller.ChatbotController;
 
 /**
  * 
@@ -181,8 +183,9 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-
-		
+				String usernameToSearch = inputField.getText();
+				
+				chatArea.setText(appController.search(usernameToSearch));
 			}
 		});	
 		
