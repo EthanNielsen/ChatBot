@@ -59,8 +59,8 @@ public class CTECTwitter
 		turnStatusesToWords();
 		totalWordCount = tweetedWords.size();
 		String [] boring = createIgnoredWordArray();
-		trimTheBoringWords(boring);
 		removeBlanks();
+		trimTheBoringWords(boring);
 		generateWordCount();
 		
 		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
@@ -116,7 +116,7 @@ public class CTECTwitter
 	{
 		for(Status currentStatus : searchedTweets)
 		{
-			String tweetText = currentStatus.getText();
+			String tweetText = currentStatus.getText().toLowerCase();
 			tweetText = tweetText.replace("\n", " ");
 			String [] tweetWords = tweetText.split(" ");
 			for(int index = 0; index < tweetWords.length; index++)
