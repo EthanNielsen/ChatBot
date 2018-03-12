@@ -22,7 +22,7 @@ public class CTECTwitter
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
 	private long totalWordCount;
-	private HashMap<String>, Integer> wordsAndCount;
+	private HashMap<String, Integer> wordsAndCount;
 	
 	public CTECTwitter(ChatbotController appController)
 	{
@@ -74,7 +74,7 @@ public class CTECTwitter
 		mostCommonWord + ", and it was used " + maxWord + " times.\nThis is " + 
 				(DecimalFormat.getPercentInstance().format(((double) maxWord)/totalWordCount)) + 
 				" of total words: " + totalWordCount + " and is " + 
-				(DecimalFormat.getPercentInstance().format(((double) maxWord/wordsAndCount.size())) + 
+				(DecimalFormat.getPercentInstance().format(((double) maxWord/wordsAndCount.size()))) + 
 						" of the unique words; " + wordsAndCount.size() ;
  
  		return mostCommon;
@@ -117,7 +117,7 @@ public class CTECTwitter
 		for(Status currentStatus : searchedTweets)
 		{
 			String tweetText = currentStatus.getText();
-			tweetText = tweetText,replace("\n", " ");
+			tweetText = tweetText.replace("\n", " ");
 			String [] tweetWords = tweetText.split(" ");
 			for(int index = 0; index < tweetWords.length; index++)
 			{
@@ -212,4 +212,31 @@ public class CTECTwitter
 			}
 		}
 	}
+	
+	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
+	{
+		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String, Integer>>(wordsAndCount.entrySet());
+		entries.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+		
+		return entries;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
