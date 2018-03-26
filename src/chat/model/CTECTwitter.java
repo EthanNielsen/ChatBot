@@ -11,6 +11,7 @@ import chat.controller.ChatbotController;
 import chat.controller.IOController;
 import twitter4j.Paging;
 import twitter4j.Query;
+import twitter4j.QueryResult;
 import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -266,14 +267,21 @@ public class CTECTwitter
 	Query twitterQuery = new Query(topic);
 	int resultMax = 750;
 	long lastId = Long.MAX_VALUE;
-	twitterQuery.setGeoCode(new GeoLocation(getCount, LONGITUDE), radius, Query.MEASUREMENT);
+	twitterQuery.setGeoCode(new GeoLocation(latitude, longitude), radius, Query.KILOMETERS);
 	ArrayList<Status> matchingTweets = new ArrayList<Status>();
-	while(searchedTweets.size() < resultMax)
+	while(matchingTweets.size() < resultMax)
 	{
 		try
 		{
 			QueryResult resltingTweets = chatbotTwitter.search(twitterQuery);
-			
+			for(Status currentTweet : resultingTweets.getTweets())
+			{
+				if(currentTweet.getId() < lastId)
+				{
+					matchingTweets.add(currentTweet);
+					lastId = currentTweet.getId();
+				}
+			}
 		}
 		
 		catch(TwitterException error)
@@ -291,20 +299,5 @@ public class CTECTwitter
 	results += matchingTweets.get(randomTweet);
 	
 	return results;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
